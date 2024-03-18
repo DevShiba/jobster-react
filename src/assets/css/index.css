@@ -3,10 +3,12 @@
 
 /*=============== VARIABLES CSS ===============*/
 :root {
+  --header-height: 3.5rem;
   /*========== Colors ==========*/
   --first-color: #02030d;
   --background-color: #13141e;
-  --second-color: #022873;
+  --second-color: #0468bf;
+  --second-color-alt: #02539b;
   --white-color: #f9f9f9;
   --white-color-2: #e4e4e4;
   --red-color: #8b0000;
@@ -72,13 +74,21 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1230px;
   margin-inline: 1.5rem;
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
+/*=============== BUTTONS ===============*/
+
+@media (min-width: 1280px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
