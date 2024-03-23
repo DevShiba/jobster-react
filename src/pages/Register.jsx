@@ -4,6 +4,8 @@ import Wrapper from "../assets/wrappers/RegisterPage";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser, registerUser } from "../features/user/userSlice";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const initialState = {
   name: "",
@@ -17,6 +19,8 @@ const Register = () => {
   const { user, isLoading } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -27,7 +31,8 @@ const Register = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { name, email, password, isMember } = values;
-    if (!name || !email || !password) {
+
+    if (!isMember && (!name || !email || !password)) {
       toast.warning("Please fill out all fields");
     }
     if (isMember) {
@@ -40,6 +45,14 @@ const Register = () => {
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [user]);
 
   return (
     <Wrapper className="container">
