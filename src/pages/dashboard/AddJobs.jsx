@@ -7,6 +7,7 @@ import {
   createJob,
   handleChange
 } from "../../features/jobs/jobsSlice";
+import { useEffect } from "react";
 
 const AddJobs = () => {
   const {
@@ -21,6 +22,8 @@ const AddJobs = () => {
     isEditing,
     editJobId,
   } = useSelector((store) => store.job);
+
+  const {user} = useSelector((store)=> store.user)
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +40,12 @@ const AddJobs = () => {
     const value = e.target.value;
     dispatch(handleChange({ name, value }));
   };
+
+  useEffect(()=>{
+    if(!isEditing){
+      dispatch(handleChange({name: 'jobLocation', value: user.location}))
+    }
+  })
   return (
     <Wrapper>
       <form className="form">

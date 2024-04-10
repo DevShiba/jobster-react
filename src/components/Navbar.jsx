@@ -38,7 +38,7 @@ const Navbar = () => {
             <button
               type="button"
               className="dropdown-btn"
-              onClick={() => dispatch(clearStore("Logging out..."))}
+              onClick={() => dispatch(logoutUser("Logging out..."))}
             >
               logout
             </button>
