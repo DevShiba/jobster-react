@@ -5,7 +5,8 @@ import { toast } from "react-toastify";
 import {
   clearValues,
   createJob,
-  handleChange
+  handleChange,
+  editJob,
 } from "../../features/jobs/jobsSlice";
 import { useEffect } from "react";
 
@@ -23,7 +24,7 @@ const AddJobs = () => {
     editJobId,
   } = useSelector((store) => store.job);
 
-  const {user} = useSelector((store)=> store.user)
+  const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +33,15 @@ const AddJobs = () => {
       toast.error("Please fill all fields");
       return;
     }
-
+    if (isEditing) {
+      dispatch(
+        editJob({
+          jobId: editJobId,
+          job: { position, company, jobLocation, jobType, status },
+        })
+      );
+      return;
+    }
     dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
   const handleJobInput = (e) => {
@@ -41,11 +50,11 @@ const AddJobs = () => {
     dispatch(handleChange({ name, value }));
   };
 
-  useEffect(()=>{
-    if(!isEditing){
-      dispatch(handleChange({name: 'jobLocation', value: user.location}))
+  useEffect(() => {
+    if (!isEditing) {
+      dispatch(handleChange({ name: "jobLocation", value: user.location }));
     }
-  })
+  });
   return (
     <Wrapper>
       <form className="form">
