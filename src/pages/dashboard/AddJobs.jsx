@@ -58,7 +58,7 @@ const AddJobs = () => {
   return (
     <Wrapper>
       <form className="form">
-        <h3>{isEditing ? "edit job" : "add job"}</h3>
+        <h3 className="title">{isEditing ? "edit job" : "add job"}</h3>
 
         <div className="form-center">
           {/* position */}
@@ -99,20 +99,18 @@ const AddJobs = () => {
             list={jobTypeOptions}
           />
 
-          {/* job type */}
-
           {/* btn container */}
           <div className="btn-container">
             <button
               type="button"
-              className="btn btn-block clear-btn"
+              className="btn  clear-btn"
               onClick={() => dispatch(clearValues())}
             >
               clear
             </button>
             <button
               type="submit"
-              className="btn btn-block submit-btn"
+              className="btn submit-btn"
               onClick={handleSubmit}
               disabled={isLoading}
             >

@@ -41,16 +41,39 @@ const Wrapper = styled.div`
         color: var(--white-color);
       }
     }
+    .form-select {
+      padding: 0.6rem;
+      border-radius: 3px;
+      border: none;
+      background-color: var(--background-color);
+      color: var(--white-color);
+      position: relative;
+      appearance: none;
+    }
+
+    .btn-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      align-self: flex-end;
+    }
 
     .btn {
       font-size: var(--normal-font-size);
+      cursor: pointer;
       text-transform: capitalize;
       font-family: var(--body-font);
-      padding: 0.4rem 0.5rem;
       border: none;
       border-radius: 2px;
       background-color: var(--second-color);
       color: var(--title-color);
+      align-self: end;
+      height: 35px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--second-color-alt);
     }
   }
 

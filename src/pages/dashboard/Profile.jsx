@@ -66,7 +66,7 @@ const { isLoading, user } = useSelector((store) => store.user);
             value={userData.location}
             handleChange={handleChange}
           />
-          <button className="btn btn-block" type="submit" disabled={isLoading}>
+          <button className="btn" type="submit" disabled={isLoading}>
             {isLoading ? "Please Wait..." : "save changes"}
           </button>
         </div>
