@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Job from "./Job";
 import Wrapper from "../assets/wrappers/JobsContainer";
-import { getAllJobs } from "../features/allJobs/allJobsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Loading from "./Loading";
-
+import { getAllJobs } from "../features/allJobs/allJobsSlice";
+import PageBtnContainer from "./PageBtnContainer";
 const JobsContainer = () => {
   const {
     jobs,
@@ -17,20 +17,14 @@ const JobsContainer = () => {
     searchType,
     sort,
   } = useSelector((store) => store.allJobs);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllJobs());
-    // eslint-disable-next-line
   }, [page, search, searchStatus, searchType, sort]);
 
   if (isLoading) {
-    return (
-      <Wrapper>
-        <Loading /> {/* CSS this later */}
-      </Wrapper>
-    );
+    return <Loading />;
   }
 
   if (jobs.length === 0) {
@@ -41,9 +35,6 @@ const JobsContainer = () => {
     );
   }
 
-  useEffect(() => {
-    dispatch(getAllJobs());
-  }, []);
   return (
     <Wrapper>
       <h5>
@@ -58,5 +49,4 @@ const JobsContainer = () => {
     </Wrapper>
   );
 };
-
 export default JobsContainer;
