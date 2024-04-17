@@ -19,7 +19,7 @@ const Job = ({
   const date = moment(createdAt).format("MMM Do, YYYY");
 
   return (
-    <Wrapper>
+    <Wrapper className="job">
       <header>
         <div className="main-icon">{company.charAt(0)}</div>
         <div className="info">

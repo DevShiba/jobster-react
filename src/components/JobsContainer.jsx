@@ -37,7 +37,7 @@ const JobsContainer = () => {
 
   return (
     <Wrapper>
-      <h5>
+      <h5 className="title">
         {totalJobs} job{jobs.length > 1 && "s"} found
       </h5>
       <div className="jobs">
