@@ -58,16 +58,22 @@ const Wrapper = styled.section`
       }
     }
 
+    .test-btn {
+      margin-top: 1rem;
+    }
+
     .member-verification {
       display: flex;
-      margin-top: 1rem;
       justify-content: center;
+      margin-top: 1rem;
+
       gap: 0.5rem;
       .member-btn {
         background: none;
         border: none;
         color: var(--second-color);
         cursor: pointer;
+        font-size: var(--normal-font-size);
       }
     }
   }

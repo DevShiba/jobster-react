@@ -52,9 +52,14 @@ const AddJobs = () => {
 
   useEffect(() => {
     if (!isEditing) {
-      dispatch(handleChange({ name: "jobLocation", value: user.location }));
+      dispatch(
+        handleChange({
+          name: "jobLocation",
+          value: user.location,
+        })
+      );
     }
-  });
+  }, []);
   return (
     <Wrapper>
       <form className="form">

@@ -26,15 +26,15 @@ const Navbar = () => {
           <h3 className="logo-text">dashboard</h3>
         </div>
         <div className="btn-container">
-          <button
+          <div
             type="button"
             className="btn"
             onClick={() => setShowLogout(!showLogout)}
           >
             <FaUserCircle />
             {user?.name}
-            <FaCaretDown />
-          </button>
+            <FaCaretDown/>
+          </div>
           <div className={showLogout ? "dropdown show-dropdown" : "dropdown"}>
             <button
               type="button"

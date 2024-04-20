@@ -89,7 +89,7 @@ const Register = () => {
         </button>
         <button
           type="button"
-          className="btn"
+          className="btn test-btn"
           disabled={isLoading}
           onClick={() => {
             dispatch(

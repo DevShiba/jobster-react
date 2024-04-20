@@ -81,6 +81,15 @@ a {
   margin-inline: 1.5rem;
 }
 
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: var(--h2-font-size);
+  color: var(--second-color);
+}
+
 /*=============== BUTTONS ===============*/
 
 @media (min-width: 1280px) {
