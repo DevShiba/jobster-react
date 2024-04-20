@@ -8,7 +8,7 @@ For the project, I utilized Redux Toolkit for state management, React Router for
 
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/5ydRsgr.png)
+![App Screenshot](https://i.imgur.com/O0bwlIA.png)
 
 
 ## Functionalities

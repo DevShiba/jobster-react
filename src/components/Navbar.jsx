@@ -17,11 +17,7 @@ const Navbar = () => {
   };
   return (
     <Wrapper>
-      <nav
-        className={
-          isSidebarOpen ? "nav container " : "nav container nav-margin"
-        }
-      >
+      <nav className="nav container">
         <button type="button" className="toggle-btn" onClick={toggle}>
           <FaAlignLeft />
         </button>
@@ -30,10 +26,7 @@ const Navbar = () => {
           <h3 className="logo-text">dashboard</h3>
         </div>
         <div className="btn-container">
-          <a
-            className="btn"
-            onClick={() => setShowLogout(!showLogout)}
-          >
+          <a className="btn" onClick={() => setShowLogout(!showLogout)}>
             <FaUserCircle />
             {user?.name}
             <FaCaretDown />
