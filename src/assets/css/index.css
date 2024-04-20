@@ -81,7 +81,7 @@ a {
   margin-inline: 1.5rem;
 }
 
-.loading{
+.loading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,4 +102,9 @@ a {
 /*=============== TOASTIFY ===============*/
 .Toastify__toast {
   text-transform: capitalize;
+}
+
+/*=============== NAV ===============*/
+.nav-margin {
+  margin: 0 2rem;
 }

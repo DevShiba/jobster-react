@@ -9,7 +9,7 @@ import { clearStore } from "../features/user/userSlice";
 
 const Navbar = () => {
   const [showLogout, setShowLogout] = useState(false);
-  const { user } = useSelector((store) => store.user);
+  const { user, isSidebarOpen } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
   const toggle = () => {
@@ -17,7 +17,11 @@ const Navbar = () => {
   };
   return (
     <Wrapper>
-      <nav className="nav container">
+      <nav
+        className={
+          isSidebarOpen ? "nav container " : "nav container nav-margin"
+        }
+      >
         <button type="button" className="toggle-btn" onClick={toggle}>
           <FaAlignLeft />
         </button>
@@ -26,15 +30,14 @@ const Navbar = () => {
           <h3 className="logo-text">dashboard</h3>
         </div>
         <div className="btn-container">
-          <div
-            type="button"
+          <a
             className="btn"
             onClick={() => setShowLogout(!showLogout)}
           >
             <FaUserCircle />
             {user?.name}
-            <FaCaretDown/>
-          </div>
+            <FaCaretDown />
+          </a>
           <div className={showLogout ? "dropdown show-dropdown" : "dropdown"}>
             <button
               type="button"

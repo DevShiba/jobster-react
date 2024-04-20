@@ -100,11 +100,9 @@ const Wrapper = styled.header`
         color: var(--title-color);
       }
     }
-
-    @media (min-width: 1280px) {
-      margin: 0 2rem;
-    }
   }
+
+
 `;
 
 export default Wrapper;
