@@ -1,7 +1,7 @@
 
 # Jobster
 
-This project is a web application designed to help users manage their job applications. Users can create an account on the website, which allows them to create, edit, and delete job applications. They can also view a report of how many applications they have submitted in a given month. Certain features are accessible only after logging in; for instance, creating a job application requires a user to log in.
+This project is a web application designed to help users manage their job applications. Users can create an account on the website, which allows them to create, edit, and delete job applications. They can also view a report of how many applications they have submitted in a given month. Certain features are accessible only after logging in for instance, creating a job application requires a user to log in.
 
 For the project, I utilized Redux Toolkit for state management, React Router for navigation, Axios for data fetching, Styled Components for styling and components, React Toastify for notifications, Moment for handling dates,Vite along with its React plugin for improved performance and faster builds.
 
